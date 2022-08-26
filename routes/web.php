@@ -33,7 +33,7 @@ Route::match(['post','get'] ,'/logout',[UserauthController::class,'logout'])->na
 //---------------------------------------------------admain------------------------------------------------
 
 Route::prefix('admin')->group(function(){
-    Route::middleware('auth:')->group(function () {
+    Route::middleware('auth')->group(function () {
         Route::get('/',[AuthController::class,"index"])->name("dashboard");
         Route::resource('course',CourseController::class);
     });
