@@ -23,7 +23,7 @@ class UserauthController extends Controller
     public function login(Request $req){
         if($req->isMethod('post')){
             $auth=$req->only('email','password');
-            if(Auth::attempt($auth)){
+            if(Auth::guard('web')->attempt($auth)){
                 return redirect()->route('home');
             }
             else{

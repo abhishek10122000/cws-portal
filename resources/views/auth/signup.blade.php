@@ -1,11 +1,12 @@
 @extends('base')
 @section('content')
+@include('include.header')
 <div class="flex h-screen bg-gray-500  place-content-center place-items-center ">
-    <div class="w-1/4 bg-blue-500 rounded p-2  shadow">
+    <div class="w-1/4 bg-sky-300 rounded-xl p-2  shadow">
         <h1 class="text-xl uppercase font-bold text-center ">Signin here</h1>
         <form action="{{route('signup')}}" method="post">
             @csrf
-            <div class="flex flex-col py-4 ">
+            <div class="flex flex-col py-3 ">
                 <label for="" class="text-white font-xs">Name</label>
                 <input type="text" name="name" value="{{old('name')}}" class="p-1 rounded border-2 shadow hover:border-green-300" placeholder="Enater name">
             </div>
@@ -17,13 +18,14 @@
                 <label for="" class="text-white font-xs">Password</label>
                 <input type="password" name="password" value="{{old('password')}}" class="p-1 rounded border-2 shadow hover:border-green-300">
             </div>
-            <div class="my-3 ">
+            <div class="my-3  pt-3">
                 <input type="submit" class="px-3 py-2 w-full text-center bg-green-400 rounded ">
             </div>
             <div class="">
-                <div class="text-end"><a href="{{route('login')}}" class="">login</a></div>
+                <a href="{{route('login')}}" class="w-full text-end">login</a>
             </div>
         </form>
     </div>
 </div>
+@include('include.footer')
 @endsection

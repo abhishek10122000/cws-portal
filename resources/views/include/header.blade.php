@@ -11,7 +11,7 @@
         <li><a href="{{route('logout')}}" class=" p-2  px-4 border border-black hover:bg-green-100 font-bold">Loguot</a></li>
         @endauth
         @guest
-        <li><a href="`{{route('login')}}" class=" p-2  px-4 border border-black hover:bg-green-100 font-bold">Log in</a></li>
+        <li><a href="{{route('login')}}" class=" p-2  px-4 border border-black hover:bg-green-100 font-bold">Log in</a></li>
         <li><a href="{{route('signup')}}" class="p-2 px-4 bg-black border border-black text-white  hover:text-green-400 font-bold">Sign up</a></li>
         @endguest
     </ul>
